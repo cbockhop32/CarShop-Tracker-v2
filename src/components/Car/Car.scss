@@ -1,0 +1,209 @@
+@import '../../styles/utils';
+
+
+.Car {
+    cursor: pointer;
+    width: 250px;
+    max-width: 250px;
+    height: 200px;
+    min-height: 200px;
+    padding-top: 0.2rem;
+    margin: 0 0.5rem;
+    border: 1px solid $secBackground;
+    border-radius: 10px;
+    text-decoration: none;
+    @include flexCenter(column);
+    color: $mainText;
+    transition: transform 0.1s ease-in;
+    overflow: hidden;
+    flex: 0 0 auto;
+    position: relative;
+
+    .deleteCarBtn {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+       
+        color: $secondaryText;
+    }
+
+    .deleteCarBtn:hover {
+        color: $mainText;
+    }
+
+    .deleteModal {
+        position: absolute;
+        width:100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        background-color: $mainText;
+        z-index: 100;
+        text-align: center;
+        display: none;
+        color: black;
+
+      
+
+
+        
+        
+    }
+    
+    .deleteModal.show {
+        @include flexCenter(column);
+
+        .deleteModal-Prompt {
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        .deleteModal-Btns {
+            width: 100%;
+            @include flexCenter(row);
+            justify-content: space-evenly;
+            margin-top: 1rem;
+
+            i:hover {
+                transform: scale(1.1);
+            }
+
+            i:active {
+                transform: scale(0.95)
+            }
+           
+        }
+
+    }
+
+
+    .CarImgContainer {
+        height: 120px;
+        @include flexCenter(row);
+    }
+
+    .CarLabel {
+        @include flexCenter(column);
+        text-align: center;
+
+        h4 {
+            font-size: 0.9rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.Car:hover {
+    transform: scale(1.05);
+  
+}
+
+
+.Car-Active {
+    border: 5px solid $mainText;
+}
+
+
+@include mobile {
+    .Car {
+      
+        width: 156.25px;
+        max-width: 156.25px;
+        height: 125px;
+        min-height: 125px;
+        margin: 0 0.3rem;
+        padding-bottom: 0.3rem;
+
+        .deleteModal.show {
+         
+    
+            .deleteModal-Prompt {
+          
+                font-size: 0.8rem;
+            }
+    
+            .deleteModal-Btns {
+                i {
+                    transform: scale(0.95);
+                }
+               
+            }
+    
+        }
+
+
+        .CarImgContainer {
+            height: 75px;
+    
+           i {
+               transform: scale(0.65);
+           }
+        }
+    
+        .CarLabel {
+            
+        
+            h4 {
+                font-size: 0.6rem;
+            }
+    
+            p {
+                font-size: 0.5rem;
+            }
+        }
+    }
+
+ 
+}
+
+
+
+
+@include tabletLaptop {
+
+    .Car {
+      
+        width: 181.25px;
+        max-width: 181.25px;
+        height: 145px;
+        min-height: 145px;
+        margin: 0 0.3rem;
+        padding-bottom: 0.3rem;
+
+
+        .CarImgContainer {
+            height: 95px;
+
+           i {
+               transform: scale(0.75);
+           }
+        }
+
+
+
+        .CarLabel {
+        
+    
+            h4 {
+                font-size: 0.7rem;
+            }
+    
+            p {
+                font-size: 0.6rem;
+            }
+        }
+      
+    
+      
+    
+     
+    
+
+       
+
+    }
+}
+

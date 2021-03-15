@@ -1,0 +1,57 @@
+@import './utils';
+
+%btn {
+    background-color: $mainText;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+   
+   
+}
+
+%btn:hover {
+    background-color: $secondaryText;
+}
+
+%btn:active {
+    transform: scale(0.95);
+}
+
+
+
+// NavLink Styling
+
+%NavLink {
+    background-color: $secondaryText;
+    display: inline-block;
+    width: 150px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.3rem 0;
+    margin: 0.3rem 0.2rem;
+    text-decoration: none;
+    color: black;
+
+
+    @include tabletLaptop {
+        font-size: 0.8rem;
+        width: 125px;
+    }
+
+    @include mobile {
+        font-size: 0.6rem;
+        width: 100px;
+
+    }
+
+}
+
+%NavLink:hover {
+    background-color: $mainText;
+}
+

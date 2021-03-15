@@ -1,0 +1,41 @@
+@import '../styles/utils';
+
+
+
+.UploadImgForm {
+    @include flexCenter(column);
+
+    .imageLabel {
+        color: $mainText;
+        cursor: pointer;
+
+    }
+
+    .imageLabel:hover {
+        color: $secondaryText;
+    }
+
+    .imageLabel:active {
+        transform: scale(0.95);
+    }
+
+}
+
+
+
+@include mobile {
+    
+.UploadImgForm {
+  
+
+    .imageLabel {
+        i {
+            transform: scale(0.75);
+        }
+
+    }
+
+    
+
+}
+}

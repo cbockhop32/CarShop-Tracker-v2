@@ -1,0 +1,1 @@
+.UploadImgForm{display:flex;flex-direction:column;align-items:center;justify-content:center}.UploadImgForm .imageLabel{color:#86C232;cursor:pointer}.UploadImgForm .imageLabel:hover{color:#61892F}.UploadImgForm .imageLabel:active{transform:scale(0.95)}@media (min-width: 300px) and (max-width: 900px){.UploadImgForm .imageLabel i{transform:scale(0.75)}}

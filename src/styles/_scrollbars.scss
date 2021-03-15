@@ -1,0 +1,30 @@
+@import './utils';
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+
+    
+   
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $scrollBackground;
+    border-radius: 15px;
+ 
+   
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $secondaryText;
+    border-radius: 15px;
+   
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: $mainText;
+
+  }
+  

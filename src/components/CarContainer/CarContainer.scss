@@ -1,0 +1,18 @@
+@import '../../styles/utils';
+
+.CarContainer {
+    background: url('../../imgs/background2.jpg') no-repeat fixed left / cover;
+    height: 100vh;
+    @include flexCenter(column);
+    justify-content: flex-start;
+    
+}
+
+
+@include tabletLaptop {
+
+    .CarContainer {
+        overflow-y: auto;
+    }
+    
+}

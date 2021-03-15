@@ -1,0 +1,62 @@
+@import '../styles/utils';
+
+.ImgPlaceholder {
+    @include flexCenter(column);
+    color: $mainText;
+    margin-top: 3rem;
+    margin-bottom: 0.3rem;
+    width: 300px;
+
+    img {
+   
+        border-radius: 15px;
+    }
+
+
+   
+
+  
+}
+
+
+@include mobile {
+    .ImgPlaceholder {
+        margin-top: 0.2rem;
+        
+
+        i {
+            transform: scale(0.60);
+        }
+  
+    }
+}
+
+
+
+
+@include tabletLaptop {
+    .ImgPlaceholder {
+        margin-top: 0.5rem;
+  
+    }
+
+
+}
+
+
+
+@include mediumLaptop {
+    .ImgPlaceholder {
+        width: 200px;
+    }
+
+   
+}
+
+
+
+
+
+
+
+

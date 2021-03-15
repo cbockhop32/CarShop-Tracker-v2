@@ -1,0 +1,172 @@
+@import '../../styles/utils';
+@import '../../styles/inputs';
+@import '../../styles/btns';
+
+
+
+.CarForm {
+    margin-top: 0.8rem;
+   
+
+    .CarForm-Container {
+
+        
+
+        background-color: $background;
+        padding: 0.4rem 2rem;
+        border-radius: 15px;
+        opacity: $backgroundOpacity;
+        @include flexCenter(column);
+        box-shadow: $backgroundShadow;
+        -webkit-box-shadow: $backgroundShadow; 
+        position: relative;
+
+
+        .Btn-LoadCar {
+            @extend %btn;
+            width: 250px;
+            margin-top: 1rem;
+        }
+
+        .RequiredNote {
+            color:$mainText;
+            font-size: 0.8rem;
+        }
+
+
+        .RequiredNote {
+            position: absolute;
+            bottom: 0.2rem;
+            left: 1rem;
+            font-size: 0.7rem;
+        }
+        
+        .Inner-Container {
+            @include flexCenter(row);
+      
+
+
+            .Input-Container {
+                @include flexCenter(column);
+                margin: 0 1rem;
+
+                label {
+                    color:$mainText;
+                }
+
+
+                .formInput {
+                    @extend %input;
+                }
+            }
+            
+        }
+
+
+    }
+}
+
+
+// Media Queries
+
+
+@include tabletLaptop {
+    .CarForm {
+ 
+        .CarForm-Container {
+            padding: 0.4rem 1rem;
+
+            
+    
+        }
+
+    }
+}
+
+
+@include mobile {
+
+    .CarForm {
+ 
+        .CarForm-Container {
+            width: 95%;
+            margin: 0 auto;
+
+            .Inner-Container {
+                flex-wrap: wrap;
+              
+              
+
+                .Input-Container {
+                    margin: 0 0.5rem;
+
+                    label {
+                        font-size: 0.7rem;
+                    }
+
+                    .formInput {
+                        padding: 0.2rem 0;
+                     
+                    }
+
+                }
+
+                
+
+
+               
+            }
+
+            .RequiredNote {
+                left: 0.5rem;
+                font-size: 0.5rem;
+            }
+
+
+            .Btn-LoadCar {
+                width: 175px;
+                margin-top: 0.6rem;
+                padding: 0.2rem 0;
+            }
+    
+   
+        }
+    }
+}
+
+@include mobileSmall {
+
+    .CarForm {
+ 
+        .CarForm-Container {
+          
+            .Inner-Container {
+           
+                justify-content: space-evenly;
+                width: 100%;
+              
+
+                .Input-Container {
+                   
+
+                    
+
+                    .formInput {
+                        padding: 0.2rem 0;
+                        width: 115px;
+                    }
+
+                }
+
+                
+
+
+
+            }
+
+    
+   
+        }
+    }
+
+}

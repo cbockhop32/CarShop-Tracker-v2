@@ -1,0 +1,23 @@
+@import '../../styles/utils';
+@import '../../styles/btns';
+
+
+.OutputControl {
+    @include mainContent();
+
+
+
+
+    .NavLink {
+        @extend %NavLink;
+
+    }
+
+    .ActiveNavLink {
+        background-color: $mainText;
+    }
+}
+
+
+
+

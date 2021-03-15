@@ -1,0 +1,99 @@
+@import '../styles/utils';
+@import '../styles/inputs';
+@import '../styles/btns';
+@import '../styles/textfields';
+
+
+.OptionsForm {
+
+    margin-top: 0.8rem;
+    
+    h4, label {
+        color: $mainText;
+    }
+
+    .FormCont-OptionsForm {
+
+        @include flexCenter(row);
+
+        .Input-OptionsForm {
+            @extend %input;
+            padding: 0.2rem 0.5rem;
+            margin: 0 1rem;
+            box-shadow: none;
+            width: 170px;
+        }
+    
+    
+        .Btn-OptionsForm {
+            @extend %btn;
+            padding: 0.2rem 0.6rem;
+            width: 100px;
+        }
+
+    }
+
+
+   
+
+
+    .OptionsList {
+        @extend %textfield;
+        background-color: $background;
+        color: $mainText;
+        border: 1px solid $secondaryText;
+        list-style: inside;
+        display: flex;
+        flex-wrap: wrap;
+        
+
+        .ListItem {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+
+            i {
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+        }
+       
+
+    }
+
+}
+
+
+
+@include mobile {
+
+    .OptionsForm {
+        text-align: center;
+
+
+        .FormCont-OptionsForm {
+
+
+
+            .Input-OptionsForm {
+            
+                width: 150px;
+            }
+
+            .Btn-OptionsForm {
+
+                padding: 0.2rem 0.4rem;
+                width: 80px;
+                font-size: 0.7rem ;
+            }
+        
+        
+        
+
+        }
+
+
+        .OptionsList {
+            margin-top: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,128 @@
+@import '../../styles/utils';
+@import '../../styles/btns';
+
+.EditBay-Header {
+   @include mainContentHeader();
+   @include flexCenter(row);
+
+
+   i {
+       margin-right: 2rem;
+       color: $mainText;
+   }
+
+   p {
+       color: $mainText;
+       font-size: 1.5rem;
+   }
+   
+}
+
+
+.EditBayOutput {
+    @include flexCenter(column);
+    
+
+    .EditBay-Forms {
+        @include flexCenter(row);
+        justify-content: space-around;
+        width: 90%;
+        margin-bottom: 1rem;
+
+        
+    }
+
+
+    .Btn-AddCar {
+        @extend %btn;
+        width: 300px;
+        font-size: 1.2rem;
+    }
+
+    .AddCar-RequiredNote {
+        color: $mainText;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+    }
+
+    .AddCar-RequiredNote.Hide {
+        color: transparent;
+    }
+}
+
+
+// Media Queries
+
+
+@include tabletLaptop {
+
+    .EditBay-Header {
+        i {
+            transform: scale(0.75);
+            margin-right: 1rem;
+        }
+
+     }
+
+    .EditBayOutput {
+        
+    
+        .EditBay-Forms {
+            @include flexCenter(column);
+            justify-content: flex-start;
+            
+    
+            
+        }
+    }
+    
+}
+
+@include mobileSmall {
+
+    .EditBay-Header {
+
+        text-align: center;
+        i {
+            display: none;
+            
+        }
+
+       
+    }
+}
+
+ 
+
+
+
+
+@include mobile {
+
+    .EditBay-Header {
+        i {
+            transform: scale(0.50);
+            margin-right: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+    }
+
+    .EditBayOutput {
+        
+    
+        .EditBay-Forms {
+            @include flexCenter(column);
+            justify-content: flex-start;
+            
+    
+            
+        }
+    }
+    
+
+}
+

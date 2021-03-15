@@ -1,0 +1,35 @@
+@import './utils';
+
+
+%textfield {
+    min-height: 100px;
+    max-height: 150px;
+    width: 475px;
+    background-color: $secBackground;
+    margin-top: 0.5rem;
+    border-radius: 15px;
+    padding: 0 0.3rem;
+    overflow-y: auto;
+
+
+    @include mobile {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    @include tabletLaptop {
+        width: 350px;
+        max-height: 125px;
+
+    }
+
+
+    @include mediumLaptop  {
+        width: 350px;
+        max-height: 125px;
+    }
+
+    
+}
+
+

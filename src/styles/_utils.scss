@@ -1,0 +1,132 @@
+
+// Colors
+
+$background: #222629;
+$secBackground: #6B6E70;
+$scrollBackground: #474B4F;
+$mainText: #86C232;
+$secondaryText: #61892F;
+$white: #f9f9f9;
+
+// Box Shadows
+
+$backgroundShadow: 0px 0px 5px 0px rgba(0,0,0,0.86);
+$inputShadow: 0px 0px 12px 0px rgba(0,0,0,0.87);
+
+
+
+
+
+
+// Opactiy for backgrounds
+
+$backgroundOpacity: 0.95;
+
+
+// Mixins
+
+    // Display Flex Default
+    @mixin flexCenter($direction) {
+        display: flex;
+        flex-direction: $direction;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Main Content Sizing (For Output Control)
+    @mixin mainContent() {
+        background-color: $background;
+        opacity: $backgroundOpacity;
+        width: 80%;
+        height: 80%;
+        margin-top: 2rem;
+        border-radius: 15px;
+        box-shadow: $backgroundShadow;
+        overflow-y: auto;
+
+        @include tabletLaptop {
+    
+            padding-bottom: 2rem;
+            height: 90%;
+            
+        }
+
+        @include mobile {
+        
+            margin-top: 1rem;
+            width: 95%;
+            padding-bottom: 2rem;
+            height: 90%;
+        }
+
+        
+
+    
+       
+
+    }
+
+    // Main Content Headers Sizing (For EditBay and MyGarage Headers)
+
+    @mixin mainContentHeader() {
+        width: 95%;
+        margin: 0 auto;
+        border-bottom: 2px solid $secBackground;
+        height: 25vh;
+
+
+        // @include tabletLaptop {
+        //     height: 25vh;
+        // }
+
+        // @include mobile {
+        //     height: 25vh;
+        // }
+    }
+
+
+
+    // Screen Width Variables
+
+    $mobile: 300px;
+    $mobileLarge: 425px;
+    $tablet: 900px;
+    $laptop: 1300px;
+    $mediumLaptop: 1630px;
+
+
+    // Mobile Media Query
+
+
+    @mixin mobileSmall {
+        @media(min-width: $mobile) and (max-width: $mobileLarge) {
+            @content
+        }
+    };
+   
+    
+    
+    
+    @mixin mobile {
+        @media(min-width: $mobile) and (max-width:$tablet) {
+            @content;
+        }
+    };
+
+
+    // Tablet/Laptop Media Query
+    @mixin tabletLaptop {
+        @media(min-width: $tablet) and (max-width: $laptop) {
+            @content;
+        }
+    };
+
+
+      // Narrow Laptop/Desktop
+      @mixin mediumLaptop {
+        @media(min-width: $laptop) and (max-width: $mediumLaptop ) {
+            @content;
+        }
+    }
+
+    

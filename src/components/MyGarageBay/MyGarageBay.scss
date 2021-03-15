@@ -1,0 +1,335 @@
+@import '../../styles/utils';
+@import '../../styles/btns';
+@import '../../styles/scrollbars';
+
+
+.MyGarageBay {
+    overflow-y: auto;
+    height: 100%;
+    color: $mainText;
+  
+   
+
+
+
+    .MyGarageBay-Inner {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+
+     
+
+        
+
+        .InnerHeader {
+            @include flexCenter(row);
+            justify-content: space-evenly;
+            border-bottom: 2px solid $secBackground;
+            padding: 0.5rem 0;
+
+            .InnerHeader-Title {
+                width: 30%;
+           
+
+                .Title-Single {
+                    @include flexCenter(row);
+                    justify-content: space-between;
+                    margin: 1rem 0;
+
+                    strong {
+                        margin-right: 2rem;
+                        font-size: 1.5rem;
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+
+
+                .Btn-ListingLink {
+            
+                    @extend %btn;
+                    margin-top: 1rem;
+                    width: 300px;
+                    font-size: 1rem;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                     
+                }
+            }
+            
+
+            .HeaderImg-Container {
+                height: 300px;
+                padding-bottom: 1rem;
+                @include flexCenter(row);
+                
+
+                .HeaderImg {
+                    height: 100%;
+                    border-radius: 15px;
+                }
+            }
+        }
+
+
+
+        .InnerDetails {
+            @include flexCenter(row);
+            align-items: flex-start;
+            margin-top: 1rem;
+            height: 37vh;
+        
+
+            .InnerDetails-Options, .InnerDetails-Comments {
+                border: 3px solid $secondaryText;
+                border-radius: 15px;
+                height: 100%;
+                overflow-y: auto;
+                
+               
+
+                .InnerDetails-Options-Content, .InnerDetails-Comments-Content {
+                    width: 95%;
+                    margin: 0 auto;
+                }
+
+                
+                
+            }
+
+            .InnerDetails-Options {
+                flex:1;
+                margin-right: 0.5rem;
+               
+
+                .InnerDetails-Title {
+                    width: 95%;
+                    margin: 0.5rem auto;
+                    background-color: $secondaryText;
+                    color: black;
+                    font-weight: bold;
+                    border-radius: 15px;
+
+                }
+                
+             
+
+
+                .InnerDetails-Options-Content {
+                    list-style: inside;
+                    text-align: left;
+                    columns: 2;
+                    -webkit-columns: 2;
+                    -moz-columns: 2;
+                }
+               
+                
+               
+            }
+
+            .InnerDetails-Comments {
+                flex:1;
+                margin-left: 0.5rem;
+
+                .InnerDetails-Title {
+                    width: 95%;
+                    margin: 0.5rem auto;
+                    background-color: $secondaryText;
+                    color: black;
+                    font-weight: bold;
+                    border-radius: 15px;
+
+                }
+                
+
+                
+                
+               
+            }
+           
+        }
+    }
+  
+}
+
+
+@include tabletLaptop {
+
+    .MyGarageBay {
+ 
+  
+      
+       
+    
+    
+    
+        .MyGarageBay-Inner {
+            width: 95%;
+
+
+
+            .InnerHeader {
+              
+                .InnerHeader-Title {
+                   
+               
+    
+                    .Title-Single {
+                    
+                        strong {
+                          
+                            font-size: 1.1rem;
+                        }
+    
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    .Btn-ListingLink {
+            
+                  
+              
+                        width: 200px;
+                        font-size: 0.8rem;
+    
+                      
+                         
+                    }
+
+                }
+
+                .HeaderImg-Container {
+                    height: 200px;
+                    
+                    
+    
+                  
+                }
+            }
+    
+            
+        }
+    }
+
+}
+
+
+@include mobile {
+    .MyGarageBay {
+        .MyGarageBay-Inner {
+            width: 95%;
+
+
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .InnerHeader {
+                @include flexCenter(column);
+                justify-content: flex-start;
+               
+              
+                .InnerHeader-Title {
+                    @include flexCenter(row);
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    margin-bottom: 1rem;
+
+               
+    
+                    .Title-Single {
+                        margin: 0.2rem 0;
+                        strong {
+                            margin-right: 0.5rem;
+                            font-size: 1rem;
+                        }
+    
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                    .Btn-ListingLink {
+            
+                  
+                        padding: 0.2rem 0.6rem;
+                        width: 150px;
+                        font-size: 0.8rem;
+                        margin: 0;
+    
+                      
+                         
+                    }
+
+
+                   
+
+                }
+
+                .HeaderImg-Container {
+                    height: 200px;
+                    
+                    
+    
+                  
+                }
+            }
+
+            .InnerDetails {
+                @include flexCenter(column);
+              
+                .InnerDetails-Options {
+                 
+                    margin: 0.2rem 0;
+                    width: 100%;
+
+                    .InnerDetails-Title {
+                        font-size: 0.8rem;
+                    }
+
+                    .InnerDetails-Options-Content {
+                        li {
+                            font-size: 0.8rem;
+                        }
+                    }
+                
+    
+                    
+                    
+                 
+    
+    
+                    
+                   
+                }
+
+                .InnerDetails-Comments {
+                    width: 100%;
+                    margin: 0.2rem 0;
+
+                    .InnerDetails-Title {
+                        font-size: 0.8rem;
+                    }
+
+
+                    .InnerDetails-Comments-Content {
+                        font-size: 0.8rem;
+                    
+                    }
+                }
+               
+              
+            
+            }
+            
+        }
+    }
+
+}

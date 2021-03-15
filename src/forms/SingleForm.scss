@@ -1,0 +1,63 @@
+@import '../styles/utils';
+@import '../styles/inputs';
+@import '../styles/btns';
+
+.SingleForm {
+    @include flexCenter(row);
+    justify-content: flex-end;
+    color: $mainText;
+    margin: 1.5rem 0;
+
+    .Input-SingleForm {
+        @extend %input;
+        padding: 0.2rem 0.5rem;
+        margin: 0 1rem;
+        box-shadow: none;
+        width: 170px;
+        font-size: 1rem;
+
+    }
+
+    .LockedVal-SingleForm {
+        width: 170px;
+        text-align: center;
+        padding:0.2rem 0;
+        margin: 0 1rem;
+    }
+
+    .LockedVal-SingleForm.Link {
+       color: $mainText;
+       font-weight: bold;
+    }
+
+
+
+    .Btn-SingleForm {
+        @extend %btn;
+        padding: 0.2rem 0.6rem;
+        width: 50px;
+        
+    }
+
+    
+}
+
+
+@include tabletLaptop {
+    .SingleForm {
+        margin: 1rem 0;
+    
+        .Input-SingleForm {
+          
+            width: 250px;
+         
+    
+        }
+
+
+        .LockedVal-SingleForm {
+            width: 250px;
+            
+        }
+    }
+}
