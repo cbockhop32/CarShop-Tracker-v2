@@ -5,6 +5,9 @@ import Car from '../Car/Car';
 import MyGarageBay from '../MyGarageBay/MyGarageBay';
 import './MyGarage.scss';
 
+
+// Component that renders all the Car components. Grabs list of Cars from the global context. Has a nested route that is used to generate MyGarageBay components when certain Car (NavLink) is selected
+
 function MyGarage() {
     const {CarsInGarage} = useContext(GlobalContext);
 
@@ -51,8 +54,6 @@ function MyGarage() {
 
         <div className='MyGarage'>
             {MyGarageHeaderOutput}
-
-
             {MyGarageOutput}
 
         </div>

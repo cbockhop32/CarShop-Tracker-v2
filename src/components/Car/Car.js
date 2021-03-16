@@ -2,13 +2,20 @@ import React, {useContext, useState} from 'react';
 import { GlobalContext } from '../../context/CarsInGarage';
 import { NavLink } from 'react-router-dom';
 import './Car.scss';
-import { numberWithCommas } from '../../styles/formatting'
+import { numberWithCommas } from '../../styles/formatting';
+
+
+// Car componenet that is rendered within MyGarage. All the data for each car is passed into Car as a prop when rendered in My Garage
 
 function Car({ car, to }) {
+
+    // Grabs deleteCar function from Global Context
     const { deleteCar } = useContext(GlobalContext);
     const [deletePrompt, setDeletePrompt] = useState(false);
 
     let imgView;
+
+    // Displays default icon if image is not uploaded
 
     if(car.imgUrl === undefined) {
         imgView = <i className="fas fa-car fa-6x" style={{color:"#86C232"}}></i>;
@@ -28,8 +35,6 @@ function Car({ car, to }) {
                         </div>
                 </div>
 
-
-
                 <i className="fas fa-times-circle deleteCarBtn" id={car.id} onClick={() => setDeletePrompt(true)}></i>
 
                 <div className="CarImgContainer">
@@ -44,8 +49,6 @@ function Car({ car, to }) {
                     <p className="CarMileage">Mileage: {numberWithCommas(car.mileage)} miles</p>
                 
                 </div>
-
-          
         </NavLink>
          
 

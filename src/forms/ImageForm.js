@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import ProgressBar from './ProgressBar';
 import './ImageForm.scss';
 
+// Holds the input field that allows user to upload file
+
 
 const ImageForm = ({getImgUrl}) => {
 

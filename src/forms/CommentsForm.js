@@ -2,25 +2,21 @@ import React, {useState} from 'react';
 import useInputState from '../hooks/useInputState';
 import './CommentsForm.scss';
 
+
+// Used within EditBay to set comments within parent
+
 function CommentsForm({valName, getFormData}) {
     const [comments, setComments] = useInputState('');
     const [isEditing, setIsEditing] = useState(true);
-
     
-    
-    
-    
-    
+    // GetFormData is passed down as a prop from EditBay to get CommentsForm current State
     const handleSubmit = (e) => {
         e.preventDefault();
         getFormData(valName, comments);
         setIsEditing(false)
-
     }
     
-   
-    
-    
+
     let commentsOutput;
 
     if(isEditing) {
@@ -29,8 +25,6 @@ function CommentsForm({valName, getFormData}) {
                 <h4>Add Comments</h4>
                 <textarea className="TextArea" style={{resize: 'none'}} rows='5'  onChange={setComments} value={comments} ></textarea>
                 <button className="Btn-CommentsForm" >Add</button>
-                
-                
             </form>
         )
     } else {

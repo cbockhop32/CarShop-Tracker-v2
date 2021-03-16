@@ -4,15 +4,16 @@ import {Route, Switch, NavLink} from 'react-router-dom';
 import EditBay from '../EditBay/EditBay';
 import MyGarage from '../MyGarage/MyGarage';
 import { GlobalProvider } from '../../context/CarsInGarage';
-import './OutputControl.scss'
+import './OutputControl.scss';
+
+
+// Main component that holds the router that either generates the EditBay or MyGarage (which has a nested router that renders individual Car components)
 
 
 function OutputControl({currentSearch, setcurrentSearch}) {
 
     return (
-
         <div className="OutputControl">
-               
             <div className="OutputControlSelector">
                 <NavLink exact to="/" className="NavLink" activeClassName="ActiveNavLink">Search</NavLink>
                 <NavLink to="/garage" className="NavLink" activeClassName="ActiveNavLink">My Garage</NavLink>

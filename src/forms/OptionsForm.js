@@ -3,6 +3,8 @@ import useInputState from '../hooks/useInputState';
 import uuid from "uuid/dist/v4";
 import './OptionsForm.scss';
 
+// Component that receives input for options and then also displays them once entered. 
+
 function OptionsForm({getOptionsData, optionsList, deleteOption}) {
     const [options, setOptions, reset] = useInputState('')
 
@@ -14,12 +16,9 @@ function OptionsForm({getOptionsData, optionsList, deleteOption}) {
             name: options,
             id: uuid()
         }
-
         getOptionsData('options', newOption);
-
         reset();
 
-      
     }
 
     const handleDelete = (e) => {
@@ -27,11 +26,9 @@ function OptionsForm({getOptionsData, optionsList, deleteOption}) {
 
     }
 
-
     return (
         <div className="OptionsForm">
                  <h4>Add Options</h4>
-
 
                 <form className="FormCont-OptionsForm" onSubmit={handleSubmit} >
                    
@@ -46,9 +43,6 @@ function OptionsForm({getOptionsData, optionsList, deleteOption}) {
                     )) : <li>No Options Added</li>}
 
                 </ul>
-            
-
-
             </div>
     )
 }

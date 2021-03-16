@@ -2,6 +2,9 @@ import React from 'react';
 import useInputState from '../../hooks/useInputState';
 import './CarForm.scss';
 
+
+// Main Car Form at the top;
+
 function CarForm({ addCurrentSearch }) {
     const [year, updateYear, resetYear] = useInputState('');
     const [make, updateMake, resetMake] = useInputState('');
@@ -18,6 +21,8 @@ function CarForm({ addCurrentSearch }) {
             trim: trim
         }
 
+        // Form validation for required fields
+
         if(year === '' || make === '' || model === '') {
             alert('Please enter required fields')
         } else {
@@ -27,6 +32,8 @@ function CarForm({ addCurrentSearch }) {
 
     
     }
+
+    // Reset statefunction that is called once Form is succesfully submited
 
     const resetFormState = () => {
         resetYear();

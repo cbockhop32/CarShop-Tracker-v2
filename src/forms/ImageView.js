@@ -1,6 +1,8 @@
 import React from 'react';
 import './ImageView.scss';
 
+// Displays image once upload is complete. ImageForm takes in the input/upload from user, once the Progress Bar (child of ImageForm) is complete, it uses GetImgUrl prop (passed down from ImageForm passed down from EditBay) to set the Url in the parent of the parent (EditBay). Once that happeens, EditBay passes down ImageUrl as a prop to ImageView to be displayed
+
 function ImageView({ imgUrl, currentSearch} ) {
     let ImageViewOutput;
     

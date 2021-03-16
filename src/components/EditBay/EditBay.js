@@ -8,26 +8,27 @@ import { GlobalContext } from '../../context/CarsInGarage';
 import uuid from "uuid/dist/v4";
 import './EditBay.scss';
 
+
+// EditBay is rendered when CarForm is submitted with a valid search. This componeent holds all the forms that will be used to build out the details for a car to be added to MyGarage
+
 function EditBay({currentSearch, setcurrentSearch}) {
     const { addCar } = useContext(GlobalContext);
     const [newCar, setNewCar] = useState({options: []});
     const [validCar, setValidCar] = useState(false);
 
-
+    // This is used to check if the required fields (Price & Mileage) have been filled in. This will enable the 'Add Car To Garage' button once the fields are valid.
     useEffect(() => {
         const validPrice = newCar.price && newCar.price !== '';
         const validMileage = newCar.mileage && newCar.mileage !== '';
-
 
         if(validPrice && validMileage) {
             setValidCar(true)
         } 
 
-
-
     }, [newCar])
 
 
+// Passed down as a prop to SingleForm to get child's state once succesfully submitted
     const getFormData = (formName, formValue) => {
         setNewCar({
             ...newCar,
@@ -35,6 +36,8 @@ function EditBay({currentSearch, setcurrentSearch}) {
         })
     }
 
+
+// Passed down as a prop to OptionsForm to get child's state once succesfully submitted
     const getOptionsData = (name, option) => {
         setNewCar({
             ...newCar,
@@ -46,6 +49,8 @@ function EditBay({currentSearch, setcurrentSearch}) {
 
     }
 
+// Passed down as a prop to OptionsForm to delete items from parent's state. Parent's state is then passed back down to Options Form to update rendered list of options
+
     const deleteOption = (id) => {
        const filteredOptions = newCar.options.filter(option => {
            if(option.id !== id) return option;
@@ -55,10 +60,9 @@ function EditBay({currentSearch, setcurrentSearch}) {
            ...newCar,
            options: filteredOptions
        })
-
-
-       
     }
+
+    // Passed down to ImageForm and then passed down to Progress Bar to get Img URL once progress bar is completed and is uploaded to Firebase Storage
 
     const getImgUrl = (url) => {
         setNewCar({
@@ -69,7 +73,7 @@ function EditBay({currentSearch, setcurrentSearch}) {
 
 
   
-
+// Packages car with CurrentSearch (passed down from parent as a prop) and newCar (this components state that is gathered from child components/forms)
     const CarForGarage = {
         ...currentSearch,
         ...newCar,
@@ -91,8 +95,6 @@ function EditBay({currentSearch, setcurrentSearch}) {
                 <p>Welcome to Car Tracker. Enter in the car details above to begin adding cars to My Garage.</p>
             </div>
         )
-
-
         
     } else {
         EditBayHeaderOutput = (
@@ -104,13 +106,8 @@ function EditBay({currentSearch, setcurrentSearch}) {
 
         )
 
-
-
-
         EditBayOutput = ( 
-        
              <div className="EditBayOutput">
-
                 <div className="EditBay-Forms">
                     <div className="EditBay-Image">
                         <ImageView imgUrl={newCar.imgUrl} currentSearch={currentSearch} />
@@ -123,16 +120,11 @@ function EditBay({currentSearch, setcurrentSearch}) {
                         <SingleForm valName='listing' getFormData={getFormData} />
                        
                     </div>
-
                     <div className="EditBay-MultipleForms">
                         <OptionsForm getOptionsData={getOptionsData} optionsList={newCar.options} deleteOption={deleteOption}/>
                         <CommentsForm valName='comments' getFormData={getFormData}  />
                     </div>
-
-                </div>
-                  
-
-                   
+                </div>   
                 <button className="Btn-AddCar" disabled={!validCar} onClick={() => {addCar(CarForGarage); setcurrentSearch(''); setNewCar({})}}>Add Car To Garage</button>
                 <p className={validCar ? "AddCar-RequiredNote Hide" : "AddCar-RequiredNote"}>Price and Mileage required to add car to My Garage</p>
 
@@ -144,7 +136,6 @@ function EditBay({currentSearch, setcurrentSearch}) {
     return (
         <div >
             {EditBayHeaderOutput}
-
             {EditBayOutput}
         </div>
     )
